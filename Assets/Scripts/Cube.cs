@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
+using Vector3 = UnityEngine.Vector3;
 
 
 /**
@@ -18,6 +20,15 @@ public class Cube : MonoBehaviour
     void Start ()
     {
         transform.name = ImproveName(newName); // Renames the cube GameObject.
+        
+        if (isRotated)
+        {
+            transform.localEulerAngles = Vector3.one * 45; // Every value, tilt the cube on 3-axes.
+        }
+        else
+        {
+            Debug.Log("This is false");
+        }
     }
 
     // Called once per frame, a game loop, 60 FPS.
