@@ -12,7 +12,7 @@ using Vector3 = UnityEngine.Vector3;
 public class Cube : MonoBehaviour
 {
     // Variables
-    public float sizeModifier = 2.5f;
+    public float sizeModifier = 0.9f;
     public string newName = "Hyuna";
     public bool isRotated = false;
 
@@ -20,14 +20,10 @@ public class Cube : MonoBehaviour
     void Start ()
     {
         transform.name = ImproveName(newName); // Renames the cube GameObject.
-        
-        if (isRotated)
+
+        if (!isRotated)
         {
-            transform.localEulerAngles = Vector3.one * 45; // Every value, tilt the cube on 3-axes.
-        }
-        else
-        {
-            Debug.Log("This is false");
+            transform.localEulerAngles = Vector3.one * 45; // 1, 1, 1 * 45, tilt the cube on 3-axes.
         }
     }
 
